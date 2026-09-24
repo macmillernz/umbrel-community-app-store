@@ -10,10 +10,9 @@ description: >-
   Firefox is Mozilla's free, open-source, privacy-focused web browser, running on your Umbrel and accessible from any device.
 
 
-  This runs the linuxserver.io Firefox image, which streams the browser to you over HTTPS on port 3491.
-  Opening the app from the Umbrel dashboard redirects you to https://<your-umbrel>:3491.
-  The certificate is self-signed, so accept the browser warning the first time, then log in with the
-  username and password umbrelOS shows for this app.
+  This runs the linuxserver.io Firefox image, which needs an HTTPS connection. Requires umbrelOS 2.0 or later,
+  which opens it at https://<your-umbrel>:3490 using Umbrel's certificate. Your browser may show a
+  privacy warning the first time.
 developer: Mozilla Foundation
 website: https://www.mozilla.org/firefox/
 submitter: macmillernz
@@ -28,5 +27,4 @@ releaseNotes: >-
   Uses linuxserver.io image 1156.0build1-ls123.
 dependencies: []
 path: ""
-defaultUsername: "umbrel"
-deterministicPassword: true
+requiresHttps: true

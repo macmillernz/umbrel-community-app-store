@@ -2,16 +2,15 @@
 
 Chromium and Firefox for umbrelOS, using the [linuxserver.io](https://linuxserver.io) images.
 
-Umbrel removed its official versions because the current linuxserver.io images need HTTPS, and Umbrel's app proxy only serves plain HTTP. These apps work around that:
+**Requires umbrelOS 2.0 or later.** The current linuxserver.io images only work over HTTPS. umbrelOS 2.0 can serve apps over HTTPS on their normal port, and these apps set `requiresHttps: true` so the dashboard opens them that way.
 
-| App      | Dashboard tile (redirects) | Browser (HTTPS, self-signed) |
-|----------|----------------------------|------------------------------|
-| Chromium | `http://umbrel.local:3480` | `https://umbrel.local:3481`  |
-| Firefox  | `http://umbrel.local:3490` | `https://umbrel.local:3491`  |
+| App      | Opens at                    |
+|----------|-----------------------------|
+| Chromium | `https://umbrel.local:3480` |
+| Firefox  | `https://umbrel.local:3490` |
 
-- The dashboard tile goes through Umbrel's login, then redirects to the HTTPS port.
-- The HTTPS port uses the image's self-signed certificate, so your browser will show a warning the first time. Accept it to continue.
-- The HTTPS port bypasses Umbrel's login, so it has its own basic auth. The username is `umbrel`, and umbrelOS shows the password when you open the app.
+- Both apps are behind the normal Umbrel login. There's no separate app password.
+- Your browser may show a certificate warning the first time. Accept it to continue.
 - Browser profiles are kept in the app's data directory and survive restarts and updates.
 
 ### Install

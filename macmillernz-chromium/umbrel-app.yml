@@ -10,10 +10,9 @@ description: >-
   Chromium is the open-source web browser project behind Google Chrome, Microsoft Edge and many others, running on your Umbrel and accessible from any device.
 
 
-  This runs the linuxserver.io Chromium image, which streams the browser to you over HTTPS on port 3481.
-  Opening the app from the Umbrel dashboard redirects you to https://<your-umbrel>:3481.
-  The certificate is self-signed, so accept the browser warning the first time, then log in with the
-  username and password umbrelOS shows for this app.
+  This runs the linuxserver.io Chromium image, which needs an HTTPS connection. Requires umbrelOS 2.0 or later,
+  which opens it at https://<your-umbrel>:3480 using Umbrel's certificate. Your browser may show a
+  privacy warning the first time.
 developer: The Chromium Project
 website: https://www.chromium.org/Home/
 submitter: macmillernz
@@ -28,5 +27,4 @@ releaseNotes: >-
   Uses linuxserver.io image b1ee1dc8-ls55.
 dependencies: []
 path: ""
-defaultUsername: "umbrel"
-deterministicPassword: true
+requiresHttps: true
